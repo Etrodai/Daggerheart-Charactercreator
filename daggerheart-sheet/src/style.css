@@ -1,0 +1,80 @@
+:root { font-family: system-ui, Arial, sans-serif; }
+body { margin: 0; }
+.hidden { display: none; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  border-right: 1px solid #ddd;
+  padding: 12px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.editor {
+  padding: 16px;
+}
+
+.muted { opacity: 0.7; }
+
+.listItem {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.listItem.active {
+  border-color: #999;
+  font-weight: 600;
+}
+
+form label {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+h3 { margin-top: 18px; }
+
+.row {
+  display: grid;
+  grid-template-columns: 1.5fr 110px 90px 1.5fr 90px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.row input[type="text"] { width: 100%; }
+.row .center { display: flex; justify-content: center; }
+.row button { padding: 8px; }
+
+.small { font-size: 0.9rem; opacity: 0.8; }
