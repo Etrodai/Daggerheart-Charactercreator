@@ -3,12 +3,14 @@ import type { Attributes } from "./Attributes";
 import type { Experience } from "./Experience";
 import type { InventoryItem } from "./inventory/InventoryItem";
 import type { Quest } from "./Quest";
+import type { SkillRef } from "./SkillRef";
 import type { Zustand } from "./Zustand";
 import type { SubclassName as Subclass } from "./SubclassName";
 import type { Ancestry } from "./Ancestry";
 import type { Community } from "./Community";
 import type { Weapon } from "./inventory/Weapon";
 import type { UUID } from "../utils/UUID";
+
 export type ISODateTime = string;
 export type CharacterId = string;
 
@@ -30,9 +32,9 @@ export interface Character {
 
 export interface CharacterCore {
   name: string;
-  className: ClassName; // Class
-  subclassName: Subclass; // SubClass
-  ancestryName: Ancestry; // Ancestry
+  className: ClassName;
+  subclassName: Subclass;
+  ancestryName: Ancestry;
   level: number;
   community: Community;
 }
@@ -64,9 +66,9 @@ export interface CharacterStats {
 
 export interface CharacterSkills {
   experiences: Experience[];
-  passiveSkills: string[];
-  activeSkills: string[];
-  vault: string[];
+  passiveSkills: SkillRef[];
+  activeSkills: SkillRef[];
+  vault: SkillRef[];
 }
 
 export interface CharacterInventory {
@@ -74,7 +76,7 @@ export interface CharacterInventory {
   activeLimit: number;
 
   items: InventoryItem[];
-  vault: InventoryItem[]; // getrennte Aufbewahrung, optional
+  vault: InventoryItem[];
 }
 
 export interface CharacterQuestlog {
@@ -87,13 +89,13 @@ export interface CharacterNotes {
 }
 
 export interface CharacterCombat {
-  toHitBonus: number; // später evtl. berechnet
+  toHitBonus: number;
   weaponProfiles: Weapon[];
 }
 
 export interface Relation {
   id: UUID;
   name: string;
-  type: string; // z.B. "Ally", "Rival", "Mentor" etc.
+  type: string;
   note: string;
 }

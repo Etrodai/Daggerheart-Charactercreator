@@ -24,25 +24,13 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 10,
     startHp: 5,
     classItem: [
-      {
-        id: "0",
-        name: "A romance novel",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "A letter never opened",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "A romance novel", note: "", slotSize: 0, active: false },
+      { id: "0", name: "A letter never opened", note: "", slotSize: 0, active: false },
     ],
   },
   Druid: {
     beschreibung:
-      "Becoming a druid is more than an occupation; it’s a calling for those who wish to learn from and protect the magic of the wilderness. While one might underestimate a gentle druid who practices the often-quiet work of cultivating flora, druids who channel the untamed forces of nature are terrifying to behold. Druids cultivate their abilities in small groups, often connected by a specific ethos or locale, but some choose to work alone. Through years of study and dedication, druids can learn to transform into beasts and shape nature itself.",
+      "Becoming a druid is more than an occupation; it's a calling for those who wish to learn from and protect the magic of the wilderness. While one might underestimate a gentle druid who practices the often-quiet work of cultivating flora, druids who channel the untamed forces of nature are terrifying to behold. Druids cultivate their abilities in small groups, often connected by a specific ethos or locale, but some choose to work alone. Through years of study and dedication, druids can learn to transform into beasts and shape nature itself.",
     domains: ["Arcana", "Sage"],
     hopeSkillName: "Evolution",
     hopeSkillBeschreibung:
@@ -50,50 +38,26 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 10,
     startHp: 6,
     classItem: [
-      {
-        id: "0",
-        name: "A small bag of rocks and bones",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "A strange pendant found in the dirt",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "A small bag of rocks and bones", note: "", slotSize: 0, active: false },
+      { id: "0", name: "A strange pendant found in the dirt", note: "", slotSize: 0, active: false },
     ],
   },
   Guardian: {
     beschreibung:
-      "The title of guardian represents an array of martial professions, speaking more to their moral compass and unshakeable fortitude than the means by which they fight. While many guardians join groups of militants for either a country or cause, they’re more likely to follow those few they truly care for, majority be damned. Guardians are known for fighting with remarkable ferocity even against overwhelming odds, defending their cohort above all else. Woe betide those who harm the ally of a guardian, as the guardian will answer this injury in kind.",
+      "The title of guardian represents an array of martial professions, speaking more to their moral compass and unshakeable fortitude than the means by which they fight. While many guardians join groups of militants for either a country or cause, they're more likely to follow those few they truly care for, majority be damned. Guardians are known for fighting with remarkable ferocity even against overwhelming odds, defending their cohort above all else. Woe betide those who harm the ally of a guardian, as the guardian will answer this injury in kind.",
     domains: ["Blade", "Valor"],
     hopeSkillName: "Frontline Tank",
     hopeSkillBeschreibung: "Spend 3 Hope to clear 2 Armor Slots.",
     startEvasion: 9,
     startHp: 7,
     classItem: [
-      {
-        id: "0",
-        name: "Totem from your mentor",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "Secret key",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "Totem from your mentor", note: "", slotSize: 0, active: false },
+      { id: "0", name: "Secret key", note: "", slotSize: 0, active: false },
     ],
   },
   Ranger: {
     beschreibung:
-      "Rangers are highly skilled hunters who, despite their martial abilities, rarely lend their skills to an army. Through mastery of the body and a deep understanding of the wilderness, rangers become sly tacticians, pursuing their quarry with cunning and patience. Many rangers track and fight alongside an animal companion with whom they’ve forged a powerful spiritual bond. By honing their skills in the wild, rangers become expert trackers, as likely to ensnare their foes in a trap as they are to assail them head-on.",
+      "Rangers are highly skilled hunters who, despite their martial abilities, rarely lend their skills to an army. Through mastery of the body and a deep understanding of the wilderness, rangers become sly tacticians, pursuing their quarry with cunning and patience. Many rangers track and fight alongside an animal companion with whom they've forged a powerful spiritual bond. By honing their skills in the wild, rangers become expert trackers, as likely to ensnare their foes in a trap as they are to assail them head-on.",
     domains: ["Bone", "Sage"],
     hopeSkillName: "Hold Them Off",
     hopeSkillBeschreibung:
@@ -101,51 +65,27 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 12,
     startHp: 6,
     classItem: [
-      {
-        id: "0",
-        name: "A trophy from your first kill",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "A seemingly broken compass",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "A trophy from your first kill", note: "", slotSize: 0, active: false },
+      { id: "0", name: "A seemingly broken compass", note: "", slotSize: 0, active: false },
     ],
   },
   Rogue: {
     beschreibung:
-      "Rogues are scoundrels, often in both attitude and practice. Broadly known as liars and thieves, the best among this class move through the world anonymously. Utilizing their sharp wits and blades, rogues trick their foes through social manipulation as easily as breaking locks, climbing through windows, or dealing underhanded blows. These masters of magical craft manipulate shadow and movement, adding an array of useful and deadly tools to their repertoire. Rogues frequently establish guilds to meet future accomplices, hire out jobs, and hone secret skills, proving that there’s honor among thieves for those who know where to look.",
+      "Rogues are scoundrels, often in both attitude and practice. Broadly known as liars and thieves, the best among this class move through the world anonymously. Utilizing their sharp wits and blades, rogues trick their foes through social manipulation as easily as breaking locks, climbing through windows, or dealing underhanded blows. These masters of magical craft manipulate shadow and movement, adding an array of useful and deadly tools to their repertoire. Rogues frequently establish guilds to meet future accomplices, hire out jobs, and hone secret skills, proving that there's honor among thieves for those who know where to look.",
     domains: ["Grace", "Midnight"],
-    hopeSkillName: "Rogue’s Dodge",
+    hopeSkillName: "Rogue's Dodge",
     hopeSkillBeschreibung:
       "Spend 3 Hope to gain a +2 bonus to your Evasion until the next time an attack succeeds against you. Otherwise, this bonus lasts until your next rest.",
     startEvasion: 12,
     startHp: 6,
     classItem: [
-      {
-        id: "0",
-        name: "Set of forgery tools",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "Grappling hook",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "Set of forgery tools", note: "", slotSize: 0, active: false },
+      { id: "0", name: "Grappling hook", note: "", slotSize: 0, active: false },
     ],
   },
   Seraph: {
     beschreibung:
-      "Seraphs are divine fighters and healers imbued with sacred purpose. A wide array of deities exist within the realms, and thus numerous kinds of seraphs are appointed by these gods. Their ethos traditionally aligns with the domain or goals of their god, such as defending the weak, exacting vengeance, protecting a land or artifact, or upholding a particular faith. Some seraphs ally themselves with an army or locale, much to the satisfaction of their rulers, but other crusaders fight in opposition to the follies of the Mortal Realm. It is better to be a seraph’s ally than their enemy, as they are terrifying foes to those who defy their purpose.",
+      "Seraphs are divine fighters and healers imbued with sacred purpose. A wide array of deities exist within the realms, and thus numerous kinds of seraphs are appointed by these gods. Their ethos traditionally aligns with the domain or goals of their god, such as defending the weak, exacting vengeance, protecting a land or artifact, or upholding a particular faith. Some seraphs ally themselves with an army or locale, much to the satisfaction of their rulers, but other crusaders fight in opposition to the follies of the Mortal Realm. It is better to be a seraph's ally than their enemy, as they are terrifying foes to those who defy their purpose.",
     domains: ["Splendor", "Valor"],
     hopeSkillName: "Life Support",
     hopeSkillBeschreibung:
@@ -153,25 +93,13 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 9,
     startHp: 7,
     classItem: [
-      {
-        id: "0",
-        name: "Bundle of offerings",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "Sigil of your god",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "Bundle of offerings", note: "", slotSize: 0, active: false },
+      { id: "0", name: "Sigil of your god", note: "", slotSize: 0, active: false },
     ],
   },
   Sorcerer: {
     beschreibung:
-      "Not all innate magic users choose to hone their craft, but those who do can become powerful sorcerers. The gifts of these wielders are passed down through families, even if the family is unaware of or reluctant to practice them. A sorcerer’s abilities can range from the elemental to the illusionary and beyond, and many practitioners band together into collectives based on their talents. The act of becoming a formidable sorcerer is not the practice of acquiring power, but learning to cultivate and control the power one already possesses. The magic of a misguided or undisciplined sorcerer is a dangerous force indeed.",
+      "Not all innate magic users choose to hone their craft, but those who do can become powerful sorcerers. The gifts of these wielders are passed down through families, even if the family is unaware of or reluctant to practice them. A sorcerer's abilities can range from the elemental to the illusionary and beyond, and many practitioners band together into collectives based on their talents. The act of becoming a formidable sorcerer is not the practice of acquiring power, but learning to cultivate and control the power one already possesses. The magic of a misguided or undisciplined sorcerer is a dangerous force indeed.",
     domains: ["Arcana", "Midnight"],
     hopeSkillName: "Volatile Magic",
     hopeSkillBeschreibung:
@@ -179,20 +107,8 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 10,
     startHp: 6,
     classItem: [
-      {
-        id: "0",
-        name: "Whispering orb",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "Family heirloom",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "Whispering orb", note: "", slotSize: 0, active: false },
+      { id: "0", name: "Family heirloom", note: "", slotSize: 0, active: false },
     ],
   },
   Warrior: {
@@ -205,20 +121,8 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 11,
     startHp: 6,
     classItem: [
-      {
-        id: "0",
-        name: "The drawing of a lover",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "Sharpening stone",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "The drawing of a lover", note: "", slotSize: 0, active: false },
+      { id: "0", name: "Sharpening stone", note: "", slotSize: 0, active: false },
     ],
   },
   Wizard: {
@@ -231,20 +135,8 @@ export const classes: Record<ClassName, Class> = {
     startEvasion: 11,
     startHp: 5,
     classItem: [
-      {
-        id: "0",
-        name: "A book you’re trying to translate",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
-      {
-        id: "0",
-        name: "Tiny, harmless elemental pet",
-        note: "",
-        slotSize: 0,
-        active: false,
-      },
+      { id: "0", name: "A book you're trying to translate", note: "", slotSize: 0, active: false },
+      { id: "0", name: "Tiny, harmless elemental pet", note: "", slotSize: 0, active: false },
     ],
   },
   "": {

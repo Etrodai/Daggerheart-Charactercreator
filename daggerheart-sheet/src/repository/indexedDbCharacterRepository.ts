@@ -1,5 +1,4 @@
-// src/data/indexedDbCharacterRepository.ts
-import type { Character, CharacterId } from "../domain/SkillRef";
+import type { Character, CharacterId } from "../domain/types/Character";
 import type { CharacterRepository } from "../domain/characterRepository";
 import { openDb, STORE_CHARACTERS } from "./db";
 
@@ -36,9 +35,7 @@ export class IndexedDbCharacterRepository implements CharacterRepository {
       updatedAt: now,
     };
 
-    // put = insert OR update (überschreibt bei gleicher id)
     store.put(updated);
-
     await waitTransaction(tx);
   }
 
@@ -58,11 +55,9 @@ export class IndexedDbCharacterRepository implements CharacterRepository {
     const tx = db.transaction(STORE_CHARACTERS, "readonly");
     const store = tx.objectStore(STORE_CHARACTERS);
 
-    // simpel: alles holen
     const results = await promisifyRequest<Character[]>(store.getAll());
     await waitTransaction(tx);
 
-    // optional: sortieren (neueste zuerst)
     results.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
     return results.map(clone);
   }
@@ -73,7 +68,6 @@ export class IndexedDbCharacterRepository implements CharacterRepository {
     const store = tx.objectStore(STORE_CHARACTERS);
 
     store.delete(id);
-
     await waitTransaction(tx);
   }
 }

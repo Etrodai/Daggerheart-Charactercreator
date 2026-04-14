@@ -21,6 +21,7 @@ export type { DomainName } from "./DomainName";
 export type { Domain } from "./Domain";
 export type { Experience } from "./Experience";
 export type { Skill } from "./Skill";
+export type { SkillRef } from "./SkillRef";
 export type { Quest } from "./Quest";
 export type { Zustand } from "./Zustand";
 export type { InventoryItem } from "./inventory/InventoryItem";

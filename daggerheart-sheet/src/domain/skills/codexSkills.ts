@@ -2,6 +2,7 @@ import type { Skill } from "../types/Skill";
 
 export const codexSkills: Skill[] = [
   {
+    skillId: "codex_placeholder",
     skillName: "",
     skillBeschreibung: "",
     skillLevel: 1,

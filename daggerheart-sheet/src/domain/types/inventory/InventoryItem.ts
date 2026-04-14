@@ -4,6 +4,6 @@ export interface InventoryItem {
   id: UUID;
   name: string;
   slotSize: number;
-  active: boolean; // "ausgewählt/aktiv"
+  active: boolean;
   note: string;
 }

@@ -6,7 +6,6 @@ function nowIso(): ISODateTime {
   return new Date().toISOString();
 }
 
-// Simple UUID für V1 (später kannst du crypto.randomUUID nutzen)
 function newId(): UUID {
   return crypto.randomUUID();
 }

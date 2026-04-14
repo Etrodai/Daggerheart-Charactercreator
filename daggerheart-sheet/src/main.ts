@@ -2,12 +2,11 @@ import "./style.css";
 import type {
   Character,
   ClassName,
-  Class,
   SubclassName as Subclass,
   Ancestry,
   Community,
   InventoryItem,
-  Skill,
+  SkillRef,
 } from "./domain/types/index";
 import type { CharacterRepository } from "./domain/characterRepository";
 import { createNewCharacter } from "./domain/defaults";
@@ -176,8 +175,8 @@ app.innerHTML = `
           <label>Minor Threshold <input id="thMinor" type="number" /></label>
           <label>Major Threshold <input id="thMajor" type="number" /></label>
         </div>
-        
-        
+
+
         <h3>Fähigkeiten</h3>
         <h4>Aktive Fähigkeiten</h4>
         <div class="toolbar">
@@ -260,7 +259,7 @@ const invActiveLimit =
 const btnAddItem = document.querySelector<HTMLButtonElement>("#btnAddItem")!;
 const invList = document.querySelector<HTMLDivElement>("#invList")!;
 
-// Vault
+// Skills
 const btnAddActiveSkill =
   document.querySelector<HTMLButtonElement>("#btnAddActiveSkill")!;
 const activeSkillsList =
@@ -334,20 +333,17 @@ function renderInventory(items: InventoryItem[]) {
       .join("")}
   `;
 
-  // Delete-Handler pro Row
   invList
     .querySelectorAll<HTMLButtonElement>('button[data-action="delete"]')
     .forEach((btn) => {
-      btn.addEventListener("click", async () => {
+      btn.addEventListener("click", () => {
         const row = btn.closest<HTMLDivElement>(".row[data-id]");
         if (!row) return;
         row.remove();
-        // Wir löschen nur aus dem DOM – gespeichert wird beim Klick auf "Speichern"
       });
     });
 }
 
-// minimale HTML-Escapes, damit Sonderzeichen dein HTML nicht zerschießen
 function escapeHtml(text: string): string {
   return text
     .replaceAll("&", "&amp;")
@@ -358,7 +354,7 @@ function escapeHtml(text: string): string {
 }
 
 function fillForm(c: Character) {
-  //Core
+  // Core
   fName.value = c.core.name ?? "";
   fClass.value = c.core.className ?? "";
   refreshSubclassOptions(fClass.value as ClassName, c.core.subclassName ?? "");
@@ -391,7 +387,7 @@ function fillForm(c: Character) {
   invActiveLimit.value = String(c.inventory.activeLimit ?? 0);
   renderInventory(c.inventory.items ?? []);
 
-  // Vault
+  // Skills
   renderSkillRefs(
     activeSkillsList,
     c.skills.activeSkills ?? [],
@@ -460,7 +456,6 @@ function readFormInto(c: Character): Character {
       ...c.skills,
       activeSkills: readSkillRefsFromDom(activeSkillsList),
       vault: readSkillRefsFromDom(skillVaultList),
-      // experiences/passiveSkills lassen wir erstmal wie sie sind
       experiences: c.skills.experiences ?? [],
       passiveSkills: c.skills.passiveSkills ?? [],
     },
@@ -496,7 +491,7 @@ function readInventoryFromDom(): InventoryItem[] {
 
 function renderSkillRefs(
   container: HTMLDivElement,
-  items: Skill[],
+  items: SkillRef[],
   emptyText: string,
 ) {
   if (items.length === 0) {
@@ -513,9 +508,9 @@ function renderSkillRefs(
     ${items
       .map(
         (it) => `
-      <div class="row" style="grid-template-columns: 1.5fr 2fr 90px;" data-id="${it.skillId}">
-        <input data-field="name" type="text" value="${escapeHtml(it.skillName)}" />
-        <input data-field="note" type="text" value="${escapeHtml(it.skillBeschreibung)}" />
+      <div class="row" style="grid-template-columns: 1.5fr 2fr 90px;" data-id="${it.id}">
+        <input data-field="name" type="text" value="${escapeHtml(it.name)}" />
+        <input data-field="note" type="text" value="${escapeHtml(it.note)}" />
         <button data-action="delete" type="button">Löschen</button>
       </div>
     `,
@@ -533,9 +528,9 @@ function renderSkillRefs(
     });
 }
 
-function readSkillRefsFromDom(container: HTMLDivElement): Skill[] {
+function readSkillRefsFromDom(container: HTMLDivElement): SkillRef[] {
   const rows = container.querySelectorAll<HTMLDivElement>(".row[data-id]");
-  const items: Skill[] = [];
+  const items: SkillRef[] = [];
 
   rows.forEach((row) => {
     const id = row.dataset.id!;
@@ -550,11 +545,11 @@ function readSkillRefsFromDom(container: HTMLDivElement): Skill[] {
 
   return items;
 }
+
 async function loadCharacters() {
   characters = await repo.list();
   renderList();
 
-  // wenn etwas ausgewählt war: neu laden
   if (selectedId) {
     const reloaded = await repo.getById(selectedId as any);
     if (reloaded) {
@@ -616,16 +611,12 @@ btnDelete.addEventListener("click", async () => {
 });
 
 btnAddItem.addEventListener("click", () => {
-  // Wir hängen eine neue Row direkt ans DOM
   const id = crypto.randomUUID();
-
-  // Wenn invList aktuell "Noch keine Items" zeigt, neu rendern:
   const current = readInventoryFromDom();
   const next: InventoryItem[] = [
     ...current,
     { id, name: "", slotSize: 1, active: false, note: "" },
   ];
-
   renderInventory(next);
 });
 
